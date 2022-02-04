@@ -38,7 +38,13 @@ const postSchema = new mongoose.Schema({
     type: [mongoose.SchemaTypes.ObjectId],
     default: [],
     ref: 'Comment',
+    required: true,
   },
+  user: {
+    type: [mongoose.SchemaTypes.ObjectId],
+    ref: 'User',
+  }
+  
 })
 
 // before saving to the database

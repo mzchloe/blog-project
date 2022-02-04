@@ -20,3 +20,9 @@ console.log(`Hash 2: ${hash2}`);
 console.log('----------------------------------------');
 console.log(`Is plainPassword1 corresponding to the created hash1: ${verifyPass1}`);
 console.log(`Is plainPassword2 corresponding to the created hash2: ${verifyPass2}`);
+
+//create hashing
+const hash = await bcrypt.hash('hello', 10)
+//.hash is a function 
+//1 arguemtn: password
+//2 argument is saltRounds #

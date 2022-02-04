@@ -55,10 +55,11 @@ function savePostAndRedirect(template) {
     req.post.title = req.body.title
     req.post.description = req.body.description
     req.post.markdown = req.body.markdown
+    req.post.user = req.session.currentUser._id
     try {
       // try saving the post to mongodb
       await req.post.save()
-      res.redirect('/')
+      res.redirect('/user/profile')
     } catch (error) {
       // if something goes wrong, redirect to the same form (updatePost or createPost)
       res.render(template, { post: req.post })
